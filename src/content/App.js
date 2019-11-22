@@ -1,12 +1,16 @@
-import React,{Component} from 'react';
-import logo from '../logo.svg';
+import React,{Component,Fragment} from 'react';
 import '../App.css';
 import '../styles/styles.css';
+import Home from './Home/Home';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap';
 
+import {BrowserRouter as Router,Switch,Route,Link} from "react-router-dom";
 
 class App extends Component{
   render(){
     return(
+        <Router>
         <div className="wr">
           <div className="header">
             <div className="nav-bar">
@@ -23,10 +27,12 @@ class App extends Component{
               </div>
             </div>
           </div>
-
-
+      <Fragment>
+        <Route path="/" exact component={Home}/>
+      </Fragment>
 
         </div>
+        </Router>
     )
   }
 }
